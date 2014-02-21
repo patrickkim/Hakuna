@@ -1,4 +1,5 @@
 $ ->
+  console.log "coffee test!"
   
   $(window).scroll ->
     parallax = $(document).scrollTop()/-3

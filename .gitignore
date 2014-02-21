@@ -4,6 +4,8 @@ node_modules/
 build
 dev
 tmp
+www/assets/javascripts
+www/assets/stylesheets
 .sass-cache
 
 *.rdb

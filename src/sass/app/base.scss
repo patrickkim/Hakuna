@@ -15,7 +15,9 @@ body {
 #header {
   position: relative;
   min-height: 750px; 
-  background: green url("../../public/images/portait.jpg") no-repeat center top;
+  width: 100%;
+  border-top: 10px solid red;
+  background: url("/assets/images/portrait.jpg") no-repeat center top;
   background-attachment: fixed;
 
   @include vendor-prefix(background-size, "cover")

@@ -3,9 +3,9 @@
   "version": "0.0.1",
   "description": "Testing out grunt with coffee and sass compilation",
   "author": "@patrickkim",
-  "repository": { 
-    "type" : "git",
-    "url" : "https://github.com/patrickkim/Hakuna.git"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrickkim/Hakuna.git"
   },
   "license": "BSD",
   "devDependencies": {
@@ -18,7 +18,9 @@
     "grunt-contrib-uglify": "~0.3.2",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-cssmin": "~0.8.0",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-connect": "~0.6.0",
+    "grunt-contrib-copy": "~0.5.0"
   },
   "build_file_name": "app"
 }
