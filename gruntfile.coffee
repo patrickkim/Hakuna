@@ -4,7 +4,7 @@ module.exports = (grunt) ->
     sass:
       dist:
         files:
-         "app.scss": "*.scss"
+         "dev/<%= pkg.build_file_name %>.css": "src/sass/app_style_manifest.scss"
 
     coffee:
       dist:
@@ -22,7 +22,9 @@ module.exports = (grunt) ->
         separator: ";"
       dist:
         src: [
-          "src/js/*.js"
+          "src/javascripts/jquery-2.1.0.js"
+          "src/javascripts/underscore-1.6.0.js"
+          "src/javascripts/backbone-1.1.2.js"
           "dev/js/**/*.js"
         ]
         dest: "dev/<%= pkg.build_file_name %>-<%=pkg.version %>.js"
@@ -51,11 +53,11 @@ module.exports = (grunt) ->
         report: "min"
       combine:
         files:
-          "build/<%= pkg.build_file_name %>.min.css": ["dev/css/<%= pkg.build_file_name %>.css"]
+          "build/<%= pkg.build_file_name %>.min.css": ["dev/<%= pkg.build_file_name %>.css"]
 
     clean:
-      build:
-        src: ["build"]
+      dev: ["dev"]
+      build: ["build"]
   )
 
   grunt.loadNpmTasks("grunt-contrib-sass")
@@ -67,5 +69,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks('grunt-contrib-clean')
 
   grunt.registerTask("default", ["sass", "coffee", "concat", "watch"])
-  grunt.registerTask("build", ["clean", "sass", "coffee", "cssmin", "concat", "uglify"])
+  grunt.registerTask("build", ["clean:dev", "clean:build", "sass", "coffee", "cssmin", "concat", "uglify", "clean:dev"])
+  grunt.registerTask("reset", ["clean:dev", "clean:build"])
 

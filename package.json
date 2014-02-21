@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Testing out grunt with coffee and sass compilation",
   "author": "@patrickkim",
+  "repository": { 
+    "type" : "git",
+    "url" : "https://github.com/patrickkim/Hakuna.git"
+  },
   "license": "BSD",
   "devDependencies": {
     "grunt": "~0.4.2",
