@@ -49,14 +49,14 @@ module.exports = (grunt) ->
         report: "min"
       my_target:
         files:
-          "build/javascripts/<%= pkg.build_file_name %>.min.js": ["dev/javascripts/<%= pkg.build_file_name %>.js"]
+          "build/javascripts/<%= pkg.build_file_name %>.js": ["dev/javascripts/<%= pkg.build_file_name %>.js"]
 
     cssmin:
       options:
         report: "min"
       combine:
         files:
-          "build/stylesheets/<%= pkg.build_file_name %>.min.css": ["dev/stylesheets/<%= pkg.build_file_name %>.css"]
+          "build/stylesheets/<%= pkg.build_file_name %>.css": ["dev/stylesheets/<%= pkg.build_file_name %>.css"]
 
     clean:
       dev: ["tmp/*", "dev/*"]
@@ -99,5 +99,6 @@ module.exports = (grunt) ->
 
   grunt.registerTask("default", ["clean:dev", "clean:assets", "coffee", "sass", "concat", "copy:dev", "connect", "watch"])
   grunt.registerTask("build", ["clean:dev", "clean:build", "clean:assets", "coffee", "sass", "concat", "uglify", "cssmin", "clean:dev", "copy:build"])
+  grunt.registerTask("production", ["clean:dev", "clean:build", "clean:assets", "coffee", "sass", "concat", "uglify", "cssmin", "clean:dev", "copy:build", "connect:server:keepalive"])
   grunt.registerTask("reset", ["clean:dev", "clean:build", "clean:assets"])
 
