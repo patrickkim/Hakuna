@@ -3,7 +3,7 @@ Hakuna
 
 Need Grunt Build script for Sass and Coffeescript. Compress and Minifies results to make static front-ends production ready.
 
-It's our problem free, philosophy!
+> It's our problem free, philosophy!
 
 Things needed before running hakuna
 
@@ -16,18 +16,24 @@ Things needed before running hakuna
 
 ## Install Sass ##
 
+See here [sass](http://sass-lang.com/)
+
     gem install sass
 
 ## Install Grunt Command Line ##
+
+See here [grunt](http://gruntjs.com/)
 
     npm install grunt-cli 
 
 
 ## Install NPM Packages ##
+
+See [npm](https://www.npmjs.org/)
     
     npm install 
 
-## Available commands
+## Available commands ##
     
     grunt
 
