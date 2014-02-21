@@ -12,6 +12,7 @@ Things needed before running hakuna
 * npm
 * ruby (need for sass)
 * sass
+* coffeescript
 * grunt command line
 
 ## Install Sass ##

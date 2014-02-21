@@ -27,7 +27,7 @@ module.exports = (grunt) ->
           "src/javascripts/backbone-1.1.2.js"
           "dev/js/**/*.js"
         ]
-        dest: "dev/<%= pkg.build_file_name %>-<%=pkg.version %>.js"
+        dest: "dev/<%= pkg.build_file_name %>.js"
 
     watch:
       css:
@@ -46,7 +46,7 @@ module.exports = (grunt) ->
         report: "min"
       my_target:
         files:
-          "build/<%= pkg.build_file_name %>-<%=pkg.version %>.min.js": ["dev/<%= pkg.build_file_name %>-<%=pkg.version %>.js"]
+          "build/<%= pkg.build_file_name %>.min.js": ["dev/<%= pkg.build_file_name %>.js"]
 
     cssmin:
       options:

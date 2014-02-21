@@ -10,6 +10,8 @@
   "license": "BSD",
   "devDependencies": {
     "grunt": "~0.4.2",
+    "grunt-cli": "*",
+    "express": "3.4.4",
     "grunt-contrib-sass": "~0.7.2",
     "grunt-contrib-coffee": "~0.10.1",
     "grunt-contrib-watch": "~0.5.3",

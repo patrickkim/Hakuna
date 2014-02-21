@@ -6,6 +6,17 @@
 
 body {
   background: #fff;
-  font-family: Helvetica, Arial, sans-serif;
+  font-family: "Helvetica", "Arial", sans-serif;  
+  font-size: 13px; line-height: 1.3em;
   font-weight: 300;
+  color:#555;
+}
+
+#header {
+  position: relative;
+  min-height: 750px; 
+  background: green url("../../public/images/portait.jpg") no-repeat center top;
+  background-attachment: fixed;
+
+  @include vendor-prefix(background-size, "cover")
 }
