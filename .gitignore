@@ -4,6 +4,7 @@ node_modules/
 build
 dev
 tmp
+.tmp
 www/assets/javascripts
 www/assets/stylesheets
 .sass-cache

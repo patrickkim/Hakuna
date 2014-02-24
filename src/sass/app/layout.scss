@@ -1,0 +1,44 @@
+// Add Padding to skeletons
+.columns { padding: 15px; background: #ddd; }
+
+body.debug {
+  .container { background: #eee; }
+  .columns { background: #ddd; }
+}
+
+// Site specific Layout
+#site {}
+
+#header {
+  min-width: 960px;
+  min-height: $header_h;
+  background: url("/assets/images/portrait.jpg") no-repeat center top;
+  background-attachment: fixed;
+
+  @include vendor-prefix(background-size, "cover");
+
+  #logo {
+    width: 180px; height: 60px;
+    font-size: 40px; line-height: 1em;
+    color: #fff;
+    background: #000;
+  }
+}
+
+#main-nav {
+  position: fixed;
+  left: 0; right: 0;
+  overflow: auto;
+}
+
+#content {
+  top: $header_h;
+  background: #fff;
+}
+
+#footer {
+  background: #000;
+}
+
+
+
