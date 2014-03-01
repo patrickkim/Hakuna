@@ -20,7 +20,8 @@
     "grunt-contrib-cssmin": "~0.8.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-connect": "~0.6.0",
-    "grunt-contrib-copy": "~0.5.0"
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-concurrent": "~0.4.3"
   },
   "build_file_name": "app"
 }

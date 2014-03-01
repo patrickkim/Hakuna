@@ -34,6 +34,7 @@ module.exports = (grunt) ->
           ".tmp/js/app.js"          
           ".tmp/js/mixins/*.js"
           ".tmp/js/models/*.js"
+          ".tmp/js/views/*.js"
         ]
         dest: ".tmp/dev/javascripts/<%= pkg.build_file_name %>.js"
 

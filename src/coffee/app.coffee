@@ -11,21 +11,28 @@ window.App =
   Views: {}
   Routers: {}
   Utilities: {}
-  Emitter: _.extend({}, Backbone.Events)
 
   initialize: (options) ->
-    console.log "Hello agea"
+    @_setup_models()
+    @_setup_views()
+    @_temp_drop_down()
+
+  _setup_models: ->
+    @application = new App.Models.Application()
     @_listen_to_scroll()
-    window.App.model = new App.Models.Application()
+
+  _setup_views: ->
+    @header_view = new App.Views.HeaderView(application: @application)
+    @nav_view = new App.Views.MainNavView(application: @application)
 
   _listen_to_scroll: ->
-    $(window).scroll( => _.throttle(@_parallax_header(), 250))
+    $(window).scroll( => _.throttle(@_trigger_scroll(), 300))
 
-  _parallax_header: ->
-    scroll_amount = $(document).scrollTop()
-    return if scroll_amount < 0 || scroll_amount > 750
+  _trigger_scroll: ->
+    scroll_amount = $(window).scrollTop()
+    @application.trigger "scroll", scroll_amount
 
-    parallax = Math.floor(scroll_amount/-3)
-    $("#header").css("background-position": "center #{parallax}px")
-    console.log "amount to parallax", parallax
+  _temp_drop_down: ->
+    $(".drop-down .selector").on "click", ->
+      $(".drop-down").toggleClass "visible"
 

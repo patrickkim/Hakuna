@@ -1,5 +1,61 @@
+body {
+  font-family: "Brandon";
+}
+
+h1, h2, h3, h4, h5, h6, .btn {
+  font-family: "Freight";
+}
+
+.btn { 
+  text-transform: uppercase;
+}
+
+
+//custom controls
+.drop-down { 
+  position: relative;
+  background: #fff; 
+  border: 1px solid #e5e5e5; 
+  overflow: hidden;
+
+  @include vendor-prefix(user-select, none);
+  @include vendor-prefix(border-radius, 7px);
+
+  .selector { 
+    z-index: 2; 
+    position: relative; 
+    cursor: pointer; 
+  }
+
+  .control {
+    position: absolute;
+    top: 0; right: 0; bottom: 0; 
+    padding: 5px 10px;
+    border-left: 1px solid #e5e5e5;
+
+    &:active {
+      padding-top: 8px;
+    }
+  }
+
+  .slider { display: none; }
+
+  .slide-item, .selected-item {
+    border-bottom: 1px solid #e5e5e5;
+    padding: 5px 10px;
+  }
+
+  .selected-item, .slide-item:last-child { border: none; }
+
+  &.visible {
+    .selected-item { border-bottom: 1px solid #e5e5e5; }
+    .slider { display: block;}
+  }
+}
+
+
 // Add Padding to skeletons
-.columns { padding: 15px; background: #ddd; }
+.columns { padding: 15px; }
 
 body.debug {
   .container { background: #eee; }
@@ -9,36 +65,17 @@ body.debug {
 // Site specific Layout
 #site {}
 
-#header {
-  min-width: 960px;
-  min-height: $header_h;
-  background: url("/assets/images/portrait.jpg") no-repeat center top;
-  background-attachment: fixed;
-
-  @include vendor-prefix(background-size, "cover");
-
-  #logo {
-    width: 180px; height: 60px;
-    font-size: 40px; line-height: 1em;
-    color: #fff;
-    background: #000;
-  }
-}
-
-#main-nav {
-  position: fixed;
-  left: 0; right: 0;
-  overflow: auto;
-}
-
 #content {
   top: $header_h;
-  background: #fff;
+  background: #f8f8f8;
 }
 
 #footer {
   background: #000;
 }
 
+#mission {
+  padding: 30px;
+}
 
 
