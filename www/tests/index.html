@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="/tests/css/test_suite.css" />
+  </head>
+
+  <body>
+    <div id="mocha"></div>
+
+    <script src="/assets/javascripts/app.js"></script>
+
+    <script src="/tests/js/mocha.js"></script>
+    <script src="/tests/js/chai.js"></script>
+    <script src="/tests/js/chai-jquery.js"></script>
+    <script src="/tests/js/sinon.js"></script>
+    <script src="/tests/js/test_setup.js"></script>
+
+    <script src="/tests/suite/app_tests.js"></script>
+
+    <script>
+      mocha.run()
+    </script>
+  </body>
+</html>

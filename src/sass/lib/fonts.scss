@@ -1,34 +1,36 @@
 @font-face {
-  font-family: "Brandon";
-  src: url("/assets/fonts/brandon.ttf");
+  font-family: "Arvo";
+  src: url("/assets/fonts/Arvo.ttf");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("/assets/fonts/brandon-i.ttf");
+  font-family: "Arvo";
+  src: url("/assets/fonts/Arvo-Italic.ttf");
   font-weight: normal;
   font-style: italic;
 }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("/assets/fonts/brandon-b.ttf");
+  font-family: "Arvo";
+  src: url("/assets/fonts/Arvo-Bold.ttf");
   font-weight: bold;
   font-style: normal;
 }
 
 @font-face {
-  font-family: "Brandon";
-  src: url("/assets/fonts/brandon-b-i.ttf");
+  font-family: "Arvo";
+  src: url("/assets/fonts/Arvo-BoldItalic.ttf");
   font-weight: bold;
   font-style: italic;
 }
 
+// San-serif
 @font-face {
   font-family: "Freight";
   src: url("/assets/fonts/freight.ttf");
+  font-weight: normal;
 }
 
 @font-face {
@@ -38,9 +40,8 @@
 }
 
 
-
-// Eh?
+// Promo & Modifiers?
 @font-face {
-  font-family: "Wolf";
-  src: url("/assets/fonts/wolf-in-the-city.ttf");
+  font-family: "Flood";
+  src: url("/assets/fonts/flood.ttf");
 }

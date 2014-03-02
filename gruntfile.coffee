@@ -13,19 +13,25 @@ module.exports = (grunt) ->
          ".tmp/dev/stylesheets/<%= pkg.build_file_name %>.css": "src/sass/app_style_manifest.scss"
 
     coffee:
-      compile:
+      app:
         files: [
           expand: true
           cwd: "src/coffee",
           src: ["**/*.coffee"]
           dest: ".tmp/js"
           ext: ".js"       
-        ] 
+        ]
+      tests:
+        files: [
+          expand: true
+          cwd: "tests",
+          src: ["**/*.coffee"]
+          dest: ".tmp/tests"
+          ext: ".js"       
+        ]
 
     concat:
-      options:
-        separator: ";"
-      dist:
+      app:
         src: [
           "src/javascripts/jquery-2.1.0.js"
           "src/javascripts/underscore-1.6.0.js"
@@ -37,6 +43,11 @@ module.exports = (grunt) ->
           ".tmp/js/views/*.js"
         ]
         dest: ".tmp/dev/javascripts/<%= pkg.build_file_name %>.js"
+      tests:
+        src: [
+          ".tmp/tests/**/*.js"
+        ]
+        dest: "www/tests/suite/app_tests.js"
 
     watch:
       css:
@@ -44,7 +55,10 @@ module.exports = (grunt) ->
         tasks: ["clean:css", "sass", "copy:css"]
       coffee:
         files: "src/**/*.coffee"
-        tasks: ["clean:js","coffee", "concat", "copy:js"]
+        tasks: ["clean:js","coffee:app", "concat:app", "copy:js"]
+      tests:
+        files: "tests/**/*.coffee"
+        tasks: ["clean:tests","coffee:tests", "concat:tests"]
 
     uglify:
       options:
@@ -63,6 +77,7 @@ module.exports = (grunt) ->
 
     clean:
       default: [".tmp", "build", "www/assets/javascripts/*", "www/assets/stylesheets/*"]
+      tests: [".tmp/tests/*", "www/tests/suite/*"]
       temp: [".tmp"]
       css: [".tmp/dev/stylesheets/*"]
       js: [".tmp/js", ".tmp/dev/javascripts/*"]

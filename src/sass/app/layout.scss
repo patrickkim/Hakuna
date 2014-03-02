@@ -1,35 +1,26 @@
-body {
-  font-family: "Brandon";
-}
-
-h1, h2, h3, h4, h5, h6, .btn {
-  font-family: "Freight";
-}
-
-.btn { 
+.btn {
   text-transform: uppercase;
 }
 
-
 //custom controls
-.drop-down { 
+.drop-down {
   position: relative;
-  background: #fff; 
-  border: 1px solid #e5e5e5; 
+  background: #fff;
+  border: 1px solid #e5e5e5;
   overflow: hidden;
 
   @include vendor-prefix(user-select, none);
   @include vendor-prefix(border-radius, 7px);
 
-  .selector { 
-    z-index: 2; 
-    position: relative; 
-    cursor: pointer; 
+  .selector {
+    z-index: 2;
+    position: relative;
+    cursor: pointer;
   }
 
   .control {
     position: absolute;
-    top: 0; right: 0; bottom: 0; 
+    top: 0; right: 0; bottom: 0;
     padding: 5px 10px;
     border-left: 1px solid #e5e5e5;
 
@@ -77,5 +68,3 @@ body.debug {
 #mission {
   padding: 30px;
 }
-
-
