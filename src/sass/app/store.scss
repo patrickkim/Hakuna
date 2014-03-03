@@ -1,63 +1,11 @@
 
 #store {
-  padding-top: 60px; 
-}
 
-#store-window {
-  padding: 0;
 }
 
 #store-gallery {
-  position: relative;
-  background: red;
-  margin-bottom: 30px;
+  min-height: 600px;
+  background: url("/assets/images/illus.jpg") 0 0 no-repeat;
 
-  img { 
-    width: 100%; 
-  }
+  @include vendor-prefix(background-size, "contain")
 }
-
-#store-sidebar {
-
-  .description {
-    font-size: 16px; line-height: 1.3em;
-  }
-
-  .price {
-    font-family: "Freight";
-    font-size: 60px;
-    font-weight: bold;
-
-    .cents {
-      position: relative;
-      font-size: 50%; line-height: 0;
-      font-weight: normal;
-      top: -0.5em;
-
-      &:before { content: "." }
-    }
-  }
-
-  .stock-amount {
-    font-size: 16px;
-    font-style: italic;
-    color: #999;
-  }
-
-  .btn { 
-    text-transform: uppercase;
-    padding: 15px 30px; 
-  }
-}
-
-
-#interactive-container {
-
-}
-
-
-// Move this
-#styling {}
-#style-tips {
-}
-

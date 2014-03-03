@@ -1,34 +1,22 @@
 #header {
-  min-width: 960px;
-  min-height: $header_h;
-  background: url("/assets/images/s0.jpg") center top no-repeat;
-  background-attachment: fixed;
+  // min-width: 960px;
+  // min-height: $header_h;
 
-  @include vendor-prefix(background-size, "cover");
 
-  .container {
+  #cover {
     position: relative;
-    min-height: $header_h;
+    width: 100%; height: 100%;
+    
+    background: url("/assets/images/splash.jpg") center top no-repeat;
+    background-attachment: fixed;
+
+    @include vendor-prefix(background-size, "cover");
   }
 
   #sale { font-family: "Flood"}
-
-  .overlay {
-    position: absolute;
-    top: 0; left: 0; bottom: 0; right: 0;
-    width: 100%;
-    min-height: $header_h;
-
-    // background: rgba(0,0,0,0.5);
-
-    background-image: -webkit-linear-gradient(top, rgba(0,0,0,0) 50%, rgba(0,0,0,0.5) 75%, #000000 100%);
-
-    // background-image: linear-gradient(top, rgba(0,0,0,0), rgba(0,0,0,0.75));
-  }
-
   #hero-copy {
     position: absolute;
-    bottom: 15%;
+    bottom: 10%;
     color: #fff;
   }
 

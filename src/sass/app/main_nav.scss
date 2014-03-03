@@ -10,8 +10,7 @@
 
   @include vendor-prefix("transition", "background-color 600ms ease-out");
 
-  .container { position: relative; }
-  .columns { padding: 60px 0 15px 0;}
+  .container { position: relative; width: 100%; }
 
   #logo {
     @extend .five.columns;
