@@ -1,16 +1,13 @@
 #main-nav {
-  @extend .animated;
-  @extend .fade-in-down;
-
   z-index: 1000;
   position: absolute;
   top: 0; left: 0; right: 0;
   overflow: auto;
   background: transparent;
 
-  @include vendor-prefix("transition", "background-color 600ms ease-out");
+  @include vendor-prefix(animation, "slide-down 300ms ease-in-out both");
 
-  .container { position: relative; width: 100%; }
+  .container { position: relative; }
 
   #logo {
     @extend .five.columns;
@@ -61,14 +58,17 @@
     color: $link_color;
   }
 
- 
-  &.fixed { 
+  &.static {
+    .container { margin-top: 60px;}
+  }
+
+  &.fixed {     
     position: fixed;
     background-color: #fff; 
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
-    a { color: #52BAD5; }
     .columns { padding: 15px 0;}
+    a { color: #52BAD5; }
 
     #logo { color: #111; }
     #nav-options { color: #777; }

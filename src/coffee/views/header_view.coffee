@@ -1,5 +1,5 @@
 class App.Views.HeaderView extends Backbone.View
-  el: "#header"
+  el: "#hero"
 
   initialize: (options ={}) ->
     @application = options.application
@@ -16,11 +16,11 @@ class App.Views.HeaderView extends Backbone.View
     return if scroll_amount < 0 || scroll_amount > 750
 
     parallax = Math.floor(scroll_amount/-3)
-    @$el.css("background-position": "center #{parallax}px")
+    @$("#cover").css("background-position": "center #{parallax}px")
 
   resize_header: ->
     window = @_window_size()
-    @$el.css(width: window.width, height: window.height)
+    @$el.css(height: window.height)
 
   _window_size: ->
     { width: $(window).width(), height: $(window).height() }

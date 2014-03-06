@@ -2,12 +2,16 @@
   text-transform: uppercase;
 }
 
+.field { position: relative; min-height: 40px; margin: 0;}
+
 //custom controls
 .drop-down {
-  position: relative;
+  position: absolute;
+  width: 100%;
   background: #fff;
   border: 1px solid #e5e5e5;
   overflow: hidden;
+  margin: 0;
 
   @include vendor-prefix(user-select, none);
   @include vendor-prefix(border-radius, 7px);
@@ -15,13 +19,15 @@
   .selector {
     z-index: 2;
     position: relative;
+    padding: 0 40px 0 0;
     cursor: pointer;
   }
 
   .control {
     position: absolute;
     top: 0; right: 0; bottom: 0;
-    padding: 5px 10px;
+    padding: 10px;
+    color: #8D8D8D;
     border-left: 1px solid #e5e5e5;
 
     &:active {
@@ -33,20 +39,23 @@
 
   .slide-item, .selected-item {
     border-bottom: 1px solid #e5e5e5;
-    padding: 5px 10px;
+    padding: 10px;
+  }
+
+  .slide-item:first-child {
+    border-top: 1px solid #e5e5e5;
   }
 
   .selected-item, .slide-item:last-child { border: none; }
 
   &.visible {
-    .selected-item { border-bottom: 1px solid #e5e5e5; }
     .slider { display: block;}
   }
 }
 
 
 // Add Padding to skeletons
-.columns { padding: 15px; }
+// .columns { padding: 15px; }
 
 body.debug {
   .container { background: #eee; }

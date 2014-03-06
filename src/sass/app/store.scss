@@ -1,6 +1,31 @@
 
 #store {
+  z-index: 2;
+  position:relative;
+  background: #f8f8f8;
 
+  #item-description, #store-checkout {
+    padding: 30px 0;
+  }
+
+  #item-description-form {  }
+  #store-form {  }
+
+  .btn { width: 100%; display: block; }
+}
+
+.payments-accepted {
+  text-align: center;
+
+  li {
+    list-style-type: none;
+    display: inline-block;
+    width: 60px; height: 40px;
+    overflow: hidden;
+    border: 2px solid #000;
+  }
+
+  span { text-indent: -999px;}
 }
 
 #store-gallery {
@@ -8,4 +33,10 @@
   background: url("/assets/images/illus.jpg") 0 0 no-repeat;
 
   @include vendor-prefix(background-size, "contain")
+}
+
+#show-room {
+  .preamble {
+    font-style: italic;
+  }
 }

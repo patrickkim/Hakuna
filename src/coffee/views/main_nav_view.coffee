@@ -20,12 +20,17 @@ class App.Views.MainNavView extends Backbone.View
     @_toggle_fixed(scroll_amt)
 
   _toggle_fixed: (scroll_amt) ->
-    @$el.toggleClass "fixed", scroll_amt > @THRESHOLD["header"]
+    if scroll_amt > @THRESHOLD["header"]
+      @$el.removeClass("static").addClass("fixed")
+    else
+      @$el.removeClass("fixed").addClass("static")
+
 
   _toggle_visibility: (scroll_amt) ->
     return @$el.removeClass "hidden" if scroll_amt < @THRESHOLD["header"] - 50
     return if @_scroll_delta(scroll_amt) < @THRESHOLD["delta"]
     @$el.toggleClass("hidden", scroll_amt > @previous_scroll)
+    
     @previous_scroll = scroll_amt
 
   _scroll_delta: (scroll_amt) ->
