@@ -3,7 +3,7 @@ class App.Views.MainNavView extends Backbone.View
 
   THRESHOLD:
     delta: 15
-    header: 700
+    header: 600
 
   initialize: (options ={}) ->
     @application = options.application
@@ -23,16 +23,19 @@ class App.Views.MainNavView extends Backbone.View
     if scroll_amt > @THRESHOLD["header"]
       @$el.removeClass("static").addClass("fixed")
     else
-      @$el.removeClass("fixed").addClass("static")
+      @$el.removeClass("fixed hidden").addClass("static")
 
 
   _toggle_visibility: (scroll_amt) ->
     return @$el.removeClass "hidden" if scroll_amt < @THRESHOLD["header"] - 50
     return if @_scroll_delta(scroll_amt) < @THRESHOLD["delta"]
-    @$el.toggleClass("hidden", scroll_amt > @previous_scroll)
-    
+
+    if scroll_amt > @previous_scroll
+      @$el.removeClass("visible").addClass "hidden"
+    else
+      @$el.removeClass("hidden").addClass "visible"
+
     @previous_scroll = scroll_amt
 
   _scroll_delta: (scroll_amt) ->
     Math.abs(@previous_scroll - scroll_amt)
-    

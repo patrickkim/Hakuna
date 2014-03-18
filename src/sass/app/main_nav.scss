@@ -5,33 +5,32 @@
   overflow: auto;
   background: transparent;
 
-  @include vendor-prefix(animation, "slide-down 300ms ease-in-out both");
-
   .container { position: relative; }
 
   #logo {
     @extend .five.columns;
     display: inline-block;
 
-    font-weight: normal;
+    font-family: "Helvetica", "Arial", sans-serif;
+    font-weight: bold;
     color: #fff;
   }
 
   #nav-options {
     font-size: 16px; line-height: 30px;
-    text-align: right; 
-    color: #fff; 
+    text-align: right;
+    color: #fff;
 
     strong { color: inherit; }
 
-    .ico { 
-      font-size:26px; 
+    .ico {
+      font-size:26px;
       vertical-align: middle;
     }
 
-    a { 
+    a {
       display: inline-block;
-      text-decoration: none; 
+      text-decoration: none;
     }
   }
 
@@ -62,9 +61,9 @@
     .container { margin-top: 60px;}
   }
 
-  &.fixed {     
+  &.fixed {
     position: fixed;
-    background-color: #fff; 
+    background-color: #fff;
     box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
     .columns { padding: 15px 0;}
@@ -72,10 +71,16 @@
 
     #logo { color: #111; }
     #nav-options { color: #777; }
- 
+
     .ico { color: #000; }
     .count { color: #fff; }
   }
- 
-  &.hidden { display: none; }
+
+  &.visible {
+    @include vendor-prefix(animation, "slide-down 300ms ease-in-out both");
+  }
+
+  &.hidden {
+    @include vendor-prefix(animation, "slide-up 300ms ease-in-out both");
+  }
 }

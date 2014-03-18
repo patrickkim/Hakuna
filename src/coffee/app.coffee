@@ -19,6 +19,7 @@ window.App =
 
   _setup_models: ->
     @application = new App.Models.Application()
+    @_set_window_dimensions()
     @_listen_to_window()
 
   _setup_views: ->
@@ -29,8 +30,14 @@ window.App =
     $(window).scroll( => _.throttle(@_trigger_scroll(), 300))
     $(window).resize( => @_trigger_resize())
 
+  _set_window_dimensions: ->
+    @application.set(window_size: {
+      width: $(window).width()
+      height: $(window).height()
+    })
+
   _trigger_resize: ->
-    @application.trigger "resize"
+    @_set_window_dimensions()
 
   _trigger_scroll: ->
     scroll_amount = $(window).scrollTop()
@@ -39,5 +46,3 @@ window.App =
   _temp_drop_down: ->
     $(".drop-down .selector").on "click", ->
       $(".drop-down").toggleClass "visible"
-
-

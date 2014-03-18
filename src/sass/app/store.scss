@@ -22,20 +22,21 @@
     display: inline-block;
     width: 60px; height: 40px;
     overflow: hidden;
-    border: 2px solid #000;
-  }
+    text-indent: -999px;
 
-  span { text-indent: -999px;}
+    @include vendor-prefix(background-size, "contain")
+  }
 }
 
 #store-gallery {
   min-height: 600px;
   background: url("/assets/images/illus.jpg") 0 0 no-repeat;
 
-  @include vendor-prefix(background-size, "contain")
+  @include vendor-prefix(background-size, "cover")
 }
 
 #show-room {
+  #copy-content { padding-right: 30px; }
   .preamble {
     font-style: italic;
   }

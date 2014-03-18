@@ -8,7 +8,7 @@
 
   <body>
     <div id="site">
-      <nav id="main-nav">
+      <nav id="main-nav" class="static">
         <div class="container">
           <div class="five columns">
             <a id="logo"><span>Logo</span></a>
@@ -24,12 +24,15 @@
         </div>
       </nav>
 
-      <header id="header">
-        <div class="overlay"></div>
-        <div class="container">
-          <div id="hero-copy" class="ten columns">
+      <header id="hero">
+        <div id="cover"></div>
+        <div id="overlay"></div>
+
+        <div id="hero-copy" class="container">
+          <div id="hero-cta" class="nine columns">
+            <h3 id="sale">50% off!</h3>
             <h1>cool headlines work</h1>
-            <h2>for WORK & for PLAY and<br/> LIFE in between</h2>
+            <h2 class="sans-serif">for WORK & for PLAY and<br/> LIFE in between</h2>
             <a class="btn btn-clear white">Shop online??</a>
           </div>
         </div>
@@ -37,76 +40,107 @@
 
       <section id="store">
         <div class="container">
-          <div id="store-window" class="eleven columns">
-            <div id="store-gallery">
-              <img src="/assets/images/s8.png"/>
-            </div>
-          </div>
-
-          <div id="store-sidebar" class="five columns">
-            <form>
-              <h4>Nomis Calais</h4>
-              <p class="description">
-                I still had a mortgage to pay and had to work, but I wanted to pursue new avenues – then along came the skateboard.
-              </p>
-
-              
-
+          <div class="row">
+            <div id="item-description" class="eight columns">
+              <h2 class="sans-serif">Things go in here</h2>
               <div class="price">
                 <span class="curr">$</span><span class="dollar">88</span><span class="cents">00</span>
               </div>
+              <p>
+                A brief descriptive text item goes here should be great copy with humor and
+                personality mixed into the copy.
+              </p>
 
-              <div class="form-action">
-                <button class="btn btn-clear">Buy this!</button>
-                <span class="stock-amount"><var>32</var> in stock</span>
-              </div>
-
-              free shipping if?
-            </form>
-          </div>
-        </div>
-      </section>
-
-      <section id="styling">
-        <div class="container">
-          <div id="style-tips" class="ten columns">
-            <h2>The word is bird</h2>
-            <p>
-              I guess the first step was that I found myself in a rut. The job I had as a graphic designer wasn't fulfilling me. I'd been seduced by the whims of Western Society, wanting a mortgage and money. I woke up on my 25th birthday and decided things weren't going to change themselves, so I needed to make a change.
-            </p>
-
-            <p>
-              I still had a mortgage to pay and had to work, but I wanted to pursue new avenues – then along came the skateboard. I loved snowboarding, but being in Wales there's not much snow, so I got myself a skateboard to relive the feeling of snowboarding.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <section id="os">
-        <div class="container">
-
-          <div class="six columns">
-            <h3>How to make it work</h3>
-            <p>
+              <p>
                 <small>
-                  I guess the first step was that I found myself in a rut.
-                  The job I had as a graphic designer wasn't fulfilling me.
-                </small>
-            </p>
-            <a href="">on Polyvore</a>
-          </div>
+                  Hand crafted silk. REal 100% leather. </small>
+              </p>
+            </div>
 
-          <div id="interactive-container" class="ten columns">
-            <img src="/assets/images/polyvore.png" >
+            <div id="store-checkout" class="eight columns">
+
+              <form id="store-form" class="row">
+                <div class="field five columns alpha">
+                  <div class="drop-down">
+                    <div class="selector">
+                      <div class="selected-item">Choose a size</div>
+                      <div class="control"><span class="ico ico-plus"></span></div>
+                    </div>
+
+                    <div class="slider">
+                      <div class="slide-item">
+                        Small
+                      </div>
+
+                      <div class="slide-item">
+                        Medium
+                      </div>
+
+                      <div class="slide-item">
+                        Large
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="action three columns omega">
+                  <button class="btn btn-clear">buy this now</button>
+                </div>
+              </form>
+              <ul class="payments-accepted">
+                <li class="visa"><span>Visa</span></li>
+                <li class="mastercard"><span>Mastercard</span></li>
+                <li class="amex"><span>American Express</span></li>
+                <li class="discover"><span>Discover</span></li>
+              </ul>
+
+              <ol>
+                <li>Free shipping on $100</li>
+                <li>No hassle returns</li>
+              </ol>
+            </div>
+
           </div>
         </div>
       </section>
+
+      <section id="show-room">
+        <div class="container">
+          <div class="eight columns">
+            <h3 class="sans-serif">Detail Product descriptions here!</h3>
+            <p class="preamble">
+              When normal humans get together around a campfire, they tell fanciful tales of unreal creatures. Conversely, when unreal creatures get together around a campfire, they tell stories about normal human beings.
+            </p>
+
+            <p>
+              Here are some popular scary campfire stories that unicorns tell:
+            </p>
+
+            <p>
+              A man looks at an apartment to rent. He likes it but needs a night to sleep on it. When he wakes up, he calls the realtor only to find that the apartment has been… TAKEN BY SOMEONE ELSE!
+            </p>
+
+            <p>
+              A man and a woman are in a relationship. The woman wants to leave their hometown and move to the city. The man wants to stay in the hometown because that's where he's always lived. The couple tries to find a compromise, but they can't so… THEY BREAK UP!
+            </p>
+          </div>
+
+          <div class="eight columns">
+            <div id="store-gallery">
+            </div>
+          </div>
+        </div>
+      </section>
+
+
 
 
       <footer id="footer">
         <div class="container">
-          foot links!
+
         </div>
+        <p class="copy clear">
+          ©2014 All Rights Reserved. Company&copy;
+        </p>
       </footer>
     </div><!-- end #site -->
 

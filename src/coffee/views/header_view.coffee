@@ -5,7 +5,7 @@ class App.Views.HeaderView extends Backbone.View
     @application = options.application
 
     @listenTo @application, "scroll", @parallax_scroll
-    @listenTo @application, "resize", @resize_header
+    @listenTo @application, "change:window_size", @resize_header
     @render()
 
   render: ->
@@ -13,14 +13,13 @@ class App.Views.HeaderView extends Backbone.View
     this
 
   parallax_scroll: (scroll_amount) =>
-    return if scroll_amount < 0 || scroll_amount > 750
+    return if scroll_amount < 0 || scroll_amount > @_window_size().height
 
     parallax = Math.floor(scroll_amount/-3)
     @$("#cover").css("background-position": "center #{parallax}px")
 
   resize_header: ->
-    window = @_window_size()
-    @$el.css(height: window.height)
+    @$el.css(height: @_window_size().height - 60)
 
   _window_size: ->
-    { width: $(window).width(), height: $(window).height() }
+    @application.get("window_size")
