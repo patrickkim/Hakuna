@@ -19,7 +19,7 @@ module.exports = (grunt) ->
           cwd: "src/coffee",
           src: ["**/*.coffee"]
           dest: ".tmp/js"
-          ext: ".js"       
+          ext: ".js"
         ]
       tests:
         files: [
@@ -27,8 +27,15 @@ module.exports = (grunt) ->
           cwd: "tests",
           src: ["**/*.coffee"]
           dest: ".tmp/tests"
-          ext: ".js"       
+          ext: ".js"
         ]
+
+    eco:
+      options:
+        basePath: "src/templates"
+      app:
+        src: ["src/templates/**/*.eco"]
+        dest: "www/assets/templates/templates.js"
 
     concat:
       app:
@@ -37,7 +44,7 @@ module.exports = (grunt) ->
           "src/javascripts/underscore-1.6.0.js"
           "src/javascripts/backbone-1.1.2.js"
           ".tmp/js/lib/*.js"
-          ".tmp/js/app.js"          
+          ".tmp/js/app.js"
           ".tmp/js/mixins/*.js"
           ".tmp/js/models/*.js"
           ".tmp/js/views/*.js"
@@ -56,6 +63,9 @@ module.exports = (grunt) ->
       coffee:
         files: "src/**/*.coffee"
         tasks: ["clean:js","coffee:app", "concat:app", "copy:js"]
+      eco:
+        files: "src/**/*.eco"
+        tasks: ["eco"]
       tests:
         files: "tests/**/*.coffee"
         tasks: ["clean:tests","coffee:tests", "concat:tests"]
@@ -107,6 +117,7 @@ module.exports = (grunt) ->
   )
 
   grunt.loadNpmTasks("grunt-contrib-sass")
+  grunt.loadNpmTasks("grunt-eco")
   grunt.loadNpmTasks("grunt-contrib-coffee")
   grunt.loadNpmTasks("grunt-contrib-concat")
   grunt.loadNpmTasks("grunt-contrib-watch")
@@ -116,7 +127,6 @@ module.exports = (grunt) ->
   grunt.loadNpmTasks("grunt-contrib-copy")
   grunt.loadNpmTasks("grunt-contrib-connect")
 
-  grunt.registerTask("default", ["clean", "coffee", "sass", "concat", "copy:dev", "connect", "watch"])
-  grunt.registerTask("build", ["clean", "coffee", "sass", "concat", "uglify", "cssmin", "copy:build"])
-  grunt.registerTask("production", ["clean", "coffee", "sass", "concat", "uglify", "cssmin", "copy:build", "connect:server:keepalive"])
-
+  grunt.registerTask("default", ["clean", "coffee", "sass", "eco", "concat", "copy:dev", "connect", "watch"])
+  grunt.registerTask("build", ["clean", "coffee", "sass", "eco", "concat", "uglify", "cssmin", "copy:build"])
+  grunt.registerTask("production", ["clean", "coffee", "sass", "eco", "concat", "uglify", "cssmin", "copy:build", "connect:server:keepalive"])
