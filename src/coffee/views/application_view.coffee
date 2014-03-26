@@ -8,7 +8,7 @@ class App.Views.ApplicationView extends Backbone.View
     @render()
 
   render: ->
-    @header_view = new App.Views.HeaderView(application: @application, el: @$("#hero"))
+    @hero_view = new App.Views.HeroView(application: @application, el: @$("#hero"))
     @nav_view = new App.Views.MainNavView(application: @application, el: @$("#main-nav"))
     this
 

@@ -1,4 +1,4 @@
-class App.Views.HeaderView extends Backbone.View
+class App.Views.HeroView extends Backbone.View
 
   initialize: (options ={}) ->
     @application = options.application

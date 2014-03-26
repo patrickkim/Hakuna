@@ -51,10 +51,10 @@
 }).call(this);
 
 (function() {
-  describe("App.Views.HeaderView", function() {
+  describe("App.Views.HeroView", function() {
     beforeEach(function() {
       this.application = new App.Models.Application();
-      return this.view = new App.Views.HeaderView({
+      return this.view = new App.Views.HeroView({
         application: this.application
       });
     });
@@ -68,6 +68,21 @@
       this.application.trigger("scroll");
       this.application.trigger("scroll");
       return expect(spy_on_parallax.callCount).to.equal(2);
+    });
+  });
+
+}).call(this);
+
+(function() {
+  describe("App.Views.MainNavView", function() {
+    beforeEach(function() {
+      this.application = new App.Models.Application();
+      return this.view = new App.Views.MainNavView({
+        application: this.application
+      });
+    });
+    return it("exists", function() {
+      return expect(this.view).to.exist;
     });
   });
 

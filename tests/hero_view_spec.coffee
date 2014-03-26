@@ -1,7 +1,7 @@
-describe "App.Views.HeaderView", ->
+describe "App.Views.HeroView", ->
   beforeEach ->
     @application = new App.Models.Application()
-    @view = new App.Views.HeaderView(application: @application)
+    @view = new App.Views.HeroView(application: @application)
 
   it "exists", ->
     expect(@view).to.exist
