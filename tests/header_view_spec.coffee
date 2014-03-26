@@ -3,10 +3,10 @@ describe "App.Views.HeaderView", ->
     @application = new App.Models.Application()
     @view = new App.Views.HeaderView(application: @application)
 
-  it "exists", ->    
+  it "exists", ->
     expect(@view).to.exist
 
-  it "parallax to listen to the application scroll event ", ->
+  it "parallax scrolls on application scroll event ", ->
     spy_on_parallax = sinon.stub(@view, "parallax_scroll")
 
     @application.on "scroll", spy_on_parallax

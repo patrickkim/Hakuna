@@ -7,8 +7,8 @@
   </head>
 
   <body>
-    <div id="site">
-      <nav id="main-nav" class="static">
+    <div id="application">
+      <nav id="main-nav" class="hidden">
         <div class="container">
           <div class="five columns">
             <a id="logo"><span>Bibster</span><sup>&copy;</sup></a>
@@ -16,7 +16,7 @@
           <div id="nav-options" class="five columns offset-by-six omega">
             <span>hello there,</span>
             <a class="sign-in">sign in</a>
-            <a href="" title="menu" class="shopping-bag">
+            <a id="nav-cart" title="menu" class="shopping-bag">
               <span class="count">2</span>
               <span class="ico ico-bag"></span>
             </a>
@@ -24,9 +24,12 @@
         </div>
       </nav>
 
-      <header id="hero">
+      <section id="hero">
         <div id="cover"></div>
         <div id="overlay"></div>
+
+        <a id="arr-next" class="arr"></a>
+        <a id="arr-prev" class="arr"></a>
 
         <div id="hero-copy" class="container">
           <div id="hero-cta" class="nine columns">
@@ -36,7 +39,7 @@
             <a class="btn btn-clear white">Shop online??</a>
           </div>
         </div>
-      </header>
+      </section>
 
       <section id="store">
         <div class="container">
@@ -109,9 +112,6 @@
         </div>
       </section>
 
-
-
-
       <footer id="footer">
         <div class="container">
 
@@ -122,8 +122,8 @@
       </footer>
     </div><!-- end #site -->
 
-    <script src="assets/javascripts/app.js"></script>
     <script src="assets/templates/templates.js"></script>
+    <script src="assets/javascripts/app.js"></script>
     <script>
       $(function(){
         App.initialize()

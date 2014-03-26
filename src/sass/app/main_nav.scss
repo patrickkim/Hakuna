@@ -1,11 +1,14 @@
 #main-nav {
   z-index: 1000;
-  position: absolute;
+  position: fixed;
   top: 0; left: 0; right: 0;
-  overflow: auto;
-  background: transparent;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
 
   .container { position: relative; }
+  .columns { padding: 15px 0;}
+
+  a { color: #52BAD5; }
 
   #logo {
     @extend .five.columns;
@@ -13,13 +16,13 @@
 
     font-family: "Helvetica", "Arial", sans-serif;
     font-weight: bold;
-    color: #fff;
+    color: #111;
   }
 
   #nav-options {
     font-size: 16px; line-height: 30px;
     text-align: right;
-    color: #fff;
+    color: #777;
 
     strong { color: inherit; }
 
@@ -36,44 +39,24 @@
 
   .shopping-bag {
     position: relative;
-    color: #fff;
+  }
 
-    .count {
-      position: absolute;
-      top: -0.4em; right: -0.2em;
-      padding: 3px;
-      background: #CB2027;
+  .count {
+    position: absolute;
+    top: -0.4em; right: -0.2em;
+    padding: 3px;
+    background: #CB2027;
 
-      font-size: 11px; line-height: 1em;
-      font-weight: bold;
+    font-size: 11px; line-height: 1em;
+    font-weight: bold;
 
-      @include vendor-prefix(border-radius, 3px);
-    }
+    @include vendor-prefix(border-radius, 3px);
   }
 
   .sign-in {
     font-style: italic;
     font-weight: bold;
     color: $link_color;
-  }
-
-  &.static {
-    .container { margin-top: 60px;}
-  }
-
-  &.fixed {
-    position: fixed;
-    background-color: #fff;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
-
-    .columns { padding: 15px 0;}
-    a { color: #52BAD5; }
-
-    #logo { color: #111; }
-    #nav-options { color: #777; }
-
-    .ico { color: #000; }
-    .count { color: #fff; }
   }
 
   &.visible {

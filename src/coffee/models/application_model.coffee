@@ -2,6 +2,7 @@ class App.Models.Application extends Backbone.Model
   @mixin App.Mixins.Timers
 
   initialize: ->
-    console.log "new Applicatio Model to store state!"
-    # @wait 600, -> console.log "Tada!"
-    @test()
+    @_set_defaults()
+
+  _set_defaults: ->
+    @set(window_size: {height: 0, width: 0})

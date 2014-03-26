@@ -4,6 +4,34 @@
   min-width: 960px;
   min-height: $header_h;
 
+  .arr {
+    display: none;
+    z-index: 5;
+    position: absolute;
+    width: 33px; height: 95px;
+    top: 50%;
+    margin: -45px 0 0 0;
+    cursor: pointer;
+
+    &:hover {
+      margin-top: -46px;
+    }
+
+    &:active {
+      margin-top: -44px;
+    }
+  }
+
+  #arr-next {
+    right: 5%;
+    background: url("/assets/images/arrow-next.png") 0 0 no-repeat;
+  }
+
+  #arr-prev {
+    left: 5%;
+    background: url("/assets/images/arrow-prev.png") 0 0 no-repeat;
+  }
+
   #cover {
     position: absolute;
     width: 100%; height: 100%;
@@ -18,11 +46,10 @@
   }
 
   #overlay {
-    display: none;
     z-index: 2;
     position: absolute;
     width: 100%; height: 100%;
-    background: rgba(234,89,0,0.5);
+    background: url("/assets/images/gradient-bg.png") bottom repeat-x;
   }
 
   #sale {
