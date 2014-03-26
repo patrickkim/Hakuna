@@ -1,9 +1,6 @@
 class App.Views.MainNavView extends Backbone.View
 
-  THRESHOLD:
-    delta: 15
-    header: 600
-
+  DELTA: 15
   events:
     "click #nav-cart": "toggle_cart"
 
@@ -24,18 +21,12 @@ class App.Views.MainNavView extends Backbone.View
     false
 
   toggle_show: ->
-    if @_cart() then @_show() else @_hide()
+    if @_cart() then @_show()
 
-  toggle_scroll: (scroll_amt) =>
-    return if @_cart()
-    return if @_scroll_delta(scroll_amt) < @THRESHOLD["delta"]
-
-    if scroll_amt > @previous_scroll || scroll_amt < @THRESHOLD["header"]
-      @_hide()
-    else
-      @_show()
-
-    @previous_scroll = scroll_amt
+  toggle_scroll: (scroll) =>
+    return if @_cart() || scroll <= 0 || @_scroll_delta(scroll) < @DELTA
+    if scroll > @previous_scroll then @_hide() else @_show()
+    @previous_scroll = scroll
 
   _cart: ->
     @application.get("cart")

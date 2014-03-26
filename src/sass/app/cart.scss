@@ -8,7 +8,7 @@
   overflow: none;
   overflow-y: scroll;
 
-  @include vendor-prefix(animation, "300ms slide-down ease-out");
+  @include vendor-prefix(animation, "100ms slide-down ease-out");
 
   .container {
     background: red;
