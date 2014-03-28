@@ -1,5 +1,5 @@
 #cart {
-  background: orange;
+  background: #212d3d;
   z-index: 900;
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -11,7 +11,50 @@
   @include vendor-prefix(animation, "100ms slide-down ease-out");
 
   .container {
-    background: red;
+    // background: red;
     min-height: 2000px;
+  }
+}
+
+#cart-list {
+  margin-top: 90px;
+  .columns {
+    // background: blue;
+  }
+
+  .cart-item {
+    border-bottom: 1px solid #676f76;
+    color: #fff;
+  }
+
+  .item-img {
+    width: 100px; height: 70px;
+    background: red;
+  }
+
+  .item-amt {
+    padding: 15px 0;
+    text-align: center;
+  }
+
+  .item-quantity {
+    width: 100%;
+    font-size: 30px;
+    text-align: center;
+  }
+
+  .add-1 {
+    font-size: 12px;
+  }
+
+  .item-subtotal {
+    padding: 30px 0;
+  }
+
+  .price {
+    margin: 0;
+    font-size: 30px;
+    text-align: right;
+    color: inherit;
   }
 }

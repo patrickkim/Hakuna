@@ -14,6 +14,7 @@ class App.Views.HeroView extends Backbone.View
   parallax_scroll: (scroll_amount) =>
     return if scroll_amount < 0 || scroll_amount > @_window_size().height
 
+    console.log "scroll123"
     parallax = Math.floor(scroll_amount/-3)
     @$("#cover").css("background-position": "center #{parallax}px")
 

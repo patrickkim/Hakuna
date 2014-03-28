@@ -1,6 +1,8 @@
-// Skeleton V1.2.1 
+// Skeleton V1.2.1
 // Based on Dave Gamache's Skeleton with minor modifications
 .container {
+  @extend .clearfix;
+
   position: relative;
   width: 960px;
   margin: 0 auto;
@@ -16,13 +18,9 @@
   .row { @extend .clearfix; margin-bottom: 20px; }
   .alpha { margin-left:0; }
   .omega { margin-right: 0; }
-}
 
-// Base 960 Grid
-// 16 column grid system
-.container {
-  @extend .clearfix;
-
+  // Base 960 Grid
+  // 16 column grid system
   .one.column, .one.columns { width: 40px; }
   .two.columns          { width: 100px; }
   .three.columns        { width: 160px; }
