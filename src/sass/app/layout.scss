@@ -6,58 +6,20 @@ a { color: #52BAD5; }
 
 .field { position: relative; min-height: 40px; margin: 0;}
 
-//custom controls
-.drop-down {
-  position: absolute;
-  width: 100%;
-  background: #fff;
-  border: 1px solid #e5e5e5;
-  overflow: hidden;
-  margin: 0;
-
-  @include vendor-prefix(user-select, none);
-  @include vendor-prefix(border-radius, 7px);
-
-  .selector {
-    z-index: 2;
-    position: relative;
-    padding: 0 40px 0 0;
-    cursor: pointer;
-  }
-
-  .control {
-    position: absolute;
-    top: 0; right: 0; bottom: 0;
-    padding: 10px;
-    color: #8D8D8D;
-    border-left: 1px solid #e5e5e5;
-
-    &:active {
-      padding-top: 8px;
-    }
-  }
-
-  .slider { display: none; }
-
-  .slide-item, .selected-item {
-    border-bottom: 1px solid #e5e5e5;
-    padding: 10px;
-  }
-
-  .slide-item:first-child {
-    border-top: 1px solid #e5e5e5;
-  }
-
-  .selected-item, .slide-item:last-child { border: none; }
-
-  &.visible {
-    .slider { display: block;}
-  }
-}
-
 
 // Add Padding to skeletons
 // .columns { padding: 15px; }
+
+
+
+
+h3 { font-size: 36px; line-height: 1em;  }
+
+#item-description {
+  text-align: center;
+
+  h3 { margin: 60px 0 30px 0; font-weight: normal; color: #DA3624; }
+}
 
 body.debug {
   .container { background: #eee; }
@@ -67,6 +29,7 @@ body.debug {
 // Site specific Layout
 #application {}
 
+
 #content {
   height: 1024px;
   background: #f8f8f8;
@@ -75,3 +38,14 @@ body.debug {
 #mission {
   padding: 30px;
 }
+
+
+#info {
+  background: url("/assets/images/info.png") 0 0 no-repeat;
+  width: 500px; height: 250px;
+  margin: 60px auto;
+}
+
+.cta-btn { font-size: 30px; padding: 15px 30px; background: #FEE064; box-shadow: 0 1px 5px rgba(0,0,0,0.2); }
+
+#item-description { margin-bottom: 180px;} 

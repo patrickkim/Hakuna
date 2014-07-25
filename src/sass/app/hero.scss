@@ -22,14 +22,13 @@
     }
   }
 
-  #arr-next {
-    right: 5%;
-    background: url("/assets/images/arrow-next.png") 0 0 no-repeat;
-  }
-
-  #arr-prev {
-    left: 5%;
-    background: url("/assets/images/arrow-prev.png") 0 0 no-repeat;
+  #logo {
+    background: url("/assets/images/ultimate-48.png") 0 0 no-repeat;
+    width: 577px; height: 79px;
+    overflow: hidden;
+    text-align: -999px;
+    margin: 0 auto;
+    margin-bottom: 30px;
   }
 
   #cover {
@@ -49,7 +48,38 @@
     z-index: 2;
     position: absolute;
     width: 100%; height: 100%;
-    background: url("/assets/images/gradient-bg.png") bottom repeat-x;
+    background: url("/assets/images/opener.png") center bottom no-repeat;
+
+    text-align: center;
+
+    #won {
+      position: absolute;
+      bottom: 150px; left: 50%;
+      width: 500px;
+      margin: 0 0 0 -250px;
+
+    }
+  }
+
+
+  #cta {
+    z-index: 10;
+    position: absolute;
+    top: 60px; left: 50%;
+    margin: 0 0 0 -450px;
+    width: 900px;
+    text-align: center;
+
+    h1 {
+      font-size: 30px;  line-height: 1.3em; font-weight: normal;
+      padding: 15px; margin: 15px auto;
+      width: 500px;
+      background: rgba(0,0,0,0.75); color: #999;
+      border-radius: 7px;
+
+      strong { color: #fff; }
+    }
+
   }
 
   #sale {
