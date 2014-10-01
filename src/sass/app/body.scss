@@ -1,0 +1,196 @@
+.title {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
+
+
+#why-its-cool {
+  padding: 60px 0;
+  text-align: center;
+
+  .title {
+    margin-top: 60px;
+    text-align: center;
+  }
+
+  .circ {
+    width: 165px; height: 165px;
+    margin: 15px auto;
+  }
+
+  #tv { background: url("/assets/images/tv.gif") 0 0 no-repeat; }
+  #zero { background: url("/assets/images/zero.gif") 0 0 no-repeat; }
+  #horse { background: url("/assets/images/horse.gif") 0 0 no-repeat; }
+  #money { background: url("/assets/images/money.gif") 0 0 no-repeat; }
+
+
+  h4 {
+    text-transform: uppercase;
+    color: #2A7C50;
+  }
+}
+
+#how-it-works {
+  position: relative;
+  padding: 60px 0;
+  color: #fff;
+  background: #27975A url("/assets/images/people.jpg") center bottom no-repeat;
+
+  @include vendor-prefix(background-size, "cover");
+
+  .title {
+    text-align: center;
+    color: #fff;
+    margin-top: 60px;
+  }
+
+  #how-list li {
+    font-size: 24px; line-height: 1.6em;
+  }
+}
+
+#about-us {
+  padding: 60px 0;
+
+  #personal-touch {
+    margin: 60px auto;
+    width: 340px; height: 340px;
+    background: url("/assets/images/corey-walter.jpg") 0 0 no-repeat;
+  }
+}
+
+#contact-us {
+  background: #27975A;
+  color: #fff;
+  padding: 60px 0;
+
+  .tel {
+    margin-top: 30px;
+  }
+
+  .title {
+    color: #fff;
+  }
+
+  .address {
+    margin: 30px 0 60px 0;
+  }
+
+  .social-media a {
+    display: inline-block;
+    margin: 5px;
+    width: 64px; height: 64px;
+    overflow: hidden;
+    text-indent: -999px;
+  }
+
+  .twitter { background: url("/assets/images/twitter.png") 0 0 no-repeat; }
+  .instagram { background: url("/assets/images/instagram.png") 0 0 no-repeat; }
+  .facebook { background: url("/assets/images/facebook.png") 0 0 no-repeat; }
+
+  #map {
+    margin: 60px auto;
+    width: 340px; height: 340px;
+    background: #eee;
+    background: url("/assets/images/static-map.jpg") 0 0 no-repeat;
+  }
+}
+
+
+
+
+
+@-webkit-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+	0% {opacity: 0;}
+	100% {opacity: 1;}
+}
+
+
+#press {
+  padding: 60px 0;
+  background: #FED160;
+}
+
+#press .title { color: #606060; text-align: cente }
+
+#press ul {
+  position: relative;
+  text-align: center;
+  height: 120px;
+  width: 100%;
+  overflow: hidden;
+}
+
+#press li {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 150px;
+
+  display: block;
+
+  padding: 30px;
+  display: none;
+
+  -webkit-animation: fadeIn 600ms ease-in-out;
+  -moz-animation: fadeIn 600ms ease-in-out;
+  -ms-animation: fadeIn 600ms ease-in-out;
+  -o-animation: fadeIn 600ms ease-in-out;
+  animation: fadeIn 600ms ease-in-out;
+}
+
+#press li:first-child {
+  display: block;
+}
+
+#press a {
+  font-size: 28px; line-height: 1.6em;
+  text-decoration: none;
+  color: #fff;
+  text-shadow: 0 0 1px rgba(0,0,0, 0.1);
+}
+
+#press a:before, #press a:after { font-family: "Georgia", serif;
+font-size: 30px;}
+
+#press a:before {
+  content: "“";
+}
+
+#press a:after {
+  content: "”"
+}
+
+#press a:hover {
+  text-decoration: underline;
+}
+
+#press .post-date {
+  display: block;
+  font-size: 18px; line-height: 1.6em;
+  font-family: "Georgia";
+  font-weight: bold;
+  font-style: italic;
+  color: #CCA131
+}
+
+#press #seen-in {
+  margin: 15px auto;
+  width: 463px; height: 50px;
+  opacity: 0.5;
+  background: url("/bar/assets/images/featured-in-logos.png") 0 0 no-repeat;
+}

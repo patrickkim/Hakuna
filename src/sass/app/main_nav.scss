@@ -2,10 +2,7 @@
   z-index: 1000;
   position: fixed;
   top: 0; left: 0; right: 0;
-  background-color: #fff;
-  border-bottom: 1px solid #d9d9d9;
-  
-  @include vendor-prefix(box-shadow, "0 0 2px 0 rgba(0,0,0,0.5)");
+  background: #1E7446;
 
   .container { position: relative; }
   .columns { padding: 15px 0;}
@@ -13,12 +10,13 @@
   a { color: #52BAD5; }
 
   #logo {
-    @extend .five.columns;
-    display: inline-block;
+    // @extend .five.columns;
+    position: absolute;
+    top: 0; left: 0;
+    width: 140px; height: 60px;
+    background: url("/assets/images/logo-sm.png") 0 0 no-repeat;
 
-    font-family: "Helvetica", "Arial", sans-serif;
-    font-weight: bold;
-    color: #111;
+    span { display: none;}
   }
 
   #nav-options {
@@ -35,30 +33,15 @@
 
     a {
       display: inline-block;
+      margin: 0 15px;
       text-decoration: none;
+
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+
+      &:hover { border-bottom: 2px solid #fff; }
     }
-  }
-
-  .shopping-bag {
-    position: relative;
-  }
-
-  .count {
-    position: absolute;
-    top: -0.4em; right: -0.2em;
-    padding: 3px;
-    background: #CB2027;
-
-    font-size: 11px; line-height: 1em;
-    font-weight: bold;
-
-    @include vendor-prefix(border-radius, 3px);
-  }
-
-  .sign-in {
-    font-style: italic;
-    font-weight: bold;
-    color: $link_color;
   }
 
   &.visible {
@@ -68,4 +51,20 @@
   &.hidden {
     @include vendor-prefix(animation, "slide-up 300ms ease-in-out both");
   }
+}
+
+#main-nav.static {
+  background: transparent;
+
+  #logo {
+    width: 278px; height: 122px;
+    background: url("/assets/images/logo.png") 0 0 no-repeat;
+  }
+
+  #nav-options a {
+    margin: 0 5px;
+    padding: 7px 15px;
+    background: #177343;
+  }
+
 }

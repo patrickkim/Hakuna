@@ -1,19 +1,17 @@
 class App.Views.ApplicationView extends Backbone.View
+  @mixin App.Mixins.Timers
+
   el: "#application"
 
   initialize: (options ={}) ->
     @application = options.application
-
-    @listenTo @application, "change:cart", @toggle_cart
     @render()
 
   render: ->
     @hero_view = new App.Views.HeroView(application: @application, el: @$("#hero"))
     @nav_view = new App.Views.MainNavView(application: @application, el: @$("#main-nav"))
+    @_start_slideshow()
     this
-
-  toggle_cart: ->
-    if @application.get("cart") then @_show_cart() else @_remove_cart()
 
   # TODO how hack is a view accessing window...?
   _save_scroll: ->
@@ -23,14 +21,8 @@ class App.Views.ApplicationView extends Backbone.View
     $(window).scrollTop(@scroll_amt)
     delete @scroll_amt
 
-  _show_cart: ->
-    return if @cart_view
-    @_save_scroll()
-    @cart_view = new App.Views.CartView(application: @application)
-    $("body").append @cart_view.el
+  _start_slideshow: ->
+    @repeat 3e3, => @_next_slide()
 
-  _remove_cart: ->
-    return unless @cart_view
-    @cart_view.leave()
-    @_apply_scroll()
-    delete @cart_view
+  _next_slide: ->
+    @$(".news").first().appendTo("#in-the-news")

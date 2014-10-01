@@ -1,35 +1,25 @@
 class App.Views.MainNavView extends Backbone.View
 
   DELTA: 15
-  events:
-    "click #nav-cart": "toggle_cart"
 
   initialize: (options ={}) ->
     @application = options.application
     @previous_scroll = 0
 
-    @listenTo @application, "change:cart", @toggle_show
     @listenTo @application, "scroll",  @toggle_scroll
+    @listenTo @application, "scroll",  @toggle_static
     @render()
 
   render: ->
     this
 
-  toggle_cart: ->
-    # TODO this shouldnt be a boolean but actual cart
-    @application.set(cart: !@_cart())
-    false
-
-  toggle_show: ->
-    if @_cart() then @_show()
-
   toggle_scroll: (scroll) =>
-    return if @_cart() || scroll <= 0 || @_scroll_delta(scroll) < @DELTA
+    return if scroll < 0 || @_scroll_delta(scroll) < @DELTA
     if scroll > @previous_scroll then @_hide() else @_show()
     @previous_scroll = scroll
 
-  _cart: ->
-    @application.get("cart")
+  toggle_static: (scroll) ->
+    @$el.toggleClass "static", scroll <= 30
 
   _show: ->
     @$el.removeClass("hidden").addClass "visible"

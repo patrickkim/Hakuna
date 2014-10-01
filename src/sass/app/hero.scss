@@ -4,40 +4,12 @@
   min-width: 960px;
   min-height: $header_h;
 
-  .arr {
-    display: none;
-    z-index: 5;
-    position: absolute;
-    width: 33px; height: 95px;
-    top: 50%;
-    margin: -45px 0 0 0;
-    cursor: pointer;
-
-    &:hover {
-      margin-top: -46px;
-    }
-
-    &:active {
-      margin-top: -44px;
-    }
-  }
-
-  #arr-next {
-    right: 5%;
-    background: url("/assets/images/arrow-next.png") 0 0 no-repeat;
-  }
-
-  #arr-prev {
-    left: 5%;
-    background: url("/assets/images/arrow-prev.png") 0 0 no-repeat;
-  }
-
   #cover {
     position: absolute;
     width: 100%; height: 100%;
 
     background-color: #111;
-    background-image: url("/assets/images/splash.jpg");
+    background-image: url("/assets/images/bar.jpg");
     background-position: center top;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -52,23 +24,36 @@
     background: url("/assets/images/gradient-bg.png") bottom repeat-x;
   }
 
-  #sale {
-    font-family: "Flood";
-    font-size: 60px;
-    color: #fff;
-  }
-
   #hero-copy {
     z-index: 2;
     position: relative;
     top: 40%;
     height: 100%;
+    text-align: center;
   }
 
   #hero-cta {
+    font-family: "Montserrat";
+    font-size: 3em;
+    line-height: 1em;
     color: #fff;
+
+    text-transform: uppercase;
+    text-shadow: 0 1px 3px #000;
   }
 
-  h1, h2 { color: inherit; }
-  h2 { font-weight: normal; }
+  #hero-action {
+    margin-top: 30px;
+    font-size: 24px;
+
+    background: #F9AF4C;
+    border-color: #F9AF4C;
+    color: #fff;
+
+    &:hover {
+      background: lighten(#F9AF4C,15%);
+      border-color:#fff;
+    }
+  }
+
 }
